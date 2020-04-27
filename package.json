@@ -1,0 +1,38 @@
+{
+  "name": "seriesflix",
+  "version": "1.0.0",
+  "description": "This Seriesflix API provides updated data in real time from the official page of seriesflix.co. It has a large catalog of series data; from production companies like HBO, AMAZON, DISNEY +, NETFLIX, FOX, MOVISTAR +, etc. In turn, this library provides all the video listings of the episodes of each series in Spanish for free.",
+  "main": "index.js",
+  "scripts": {
+    "start:api": "nodemon ./src/api/api.js"
+  },
+  "keywords": [
+    "seriesflix",
+    "seriesflix.co",
+    "seriesflix-api"
+  ],
+  "author": {
+    "name": "Chris Michael",
+    "email": "chrisperezsantiago1@gmail.com",
+    "url": "http://personal-porfolio.chrismichael.now.sh",
+    "social": {
+      "github": "https://github.com/ChrisMichaelPerezSantiago",
+      "twitter": "https://twitter.com/Chris5855M"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Chris Michael",
+      "url": "https://github.com/ChrisMichaelPerezSantiago",
+      "reason": "Project Leader, and Developer"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "cloudscraper": "^4.6.0",
+    "nodemon": "^2.0.3",
+    "request": "^2.88.2"
+  }
+}
