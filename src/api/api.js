@@ -3,6 +3,62 @@ const {client} = require('../client/client');
 const {toInt , getIframeURL} = require('./utils/index');
 const {BASE_URL} = require('./url/index');
 
+
+const seriesByProducers = async(producer) =>{
+  const res = await client.get(`${BASE_URL}/genero/${producer}`);
+  const $ = cheerio.load(res);
+
+  const promise = $('div.Main section ul.MovieList li.TPostMv article.TPost')
+    .map((index , element) => new Promise(async(resolve, reject) =>{
+      const $element = $(element);
+      const id = 'series/'.concat($element.find('a').attr('href').split('/')[4]).trim();
+      const title = $element.find('a h2.Title').text().trim();
+      const poster = $element.find('div.Image figure img').attr('data-src');
+      const type = $element.find('div.Image span.Qlty').text().trim();
+      const extra = await contentHandler(id);
+
+      resolve({
+        id: id || null,
+        title: title || null,
+        poster: poster || null,
+        type: type || null,
+        extra: extra || null
+      });
+    }));
+
+  const data = promise.get();
+
+  return Promise.all(data);
+}
+
+// This function does not work correctly yet, correction needs
+const allSeries = async(page = 1) =>{
+  const res = await client.get(`${BASE_URL}/ver-series-online/page/${page}`);
+  const $ = cheerio.load(res);
+
+  const promise = $('div.Main section ul.MovieList li.TPostMv article.TPost')
+    .map((index , element) => new Promise(async(resolve, reject) =>{
+      const $element = $(element);
+      const id = 'series/'.concat($element.find('a').attr('href').split('/')[4]).trim();
+      const title = $element.find('a h2.Title').text().trim();
+      const poster = $element.find('div.Image figure img').attr('data-src');
+      const type = $element.find('div.Image span.Qlty').text().trim();
+      const extra = await contentHandler(id);
+
+      resolve({
+        id: id || null,
+        title: title || null,
+        poster: poster || null,
+        type: type || null,
+        extra: extra || null
+      });
+    }));
+
+  const data = promise.get();
+
+  return Promise.all(data);
+}
+
 const mostPopularSeries = async() =>{
   const res = await client.get('https://seriesflix.co/');
   const $ = cheerio.load(res);
@@ -148,5 +204,6 @@ const getVideo = async(id) =>{
 
 module.exports = {
   mostPopularSeries,
+  seriesByProducers,
   getVideo
 };
