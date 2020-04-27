@@ -20,8 +20,167 @@ Project started, and in development process. More information in the next days /
 This API does not store any files on our server. All content is provided by third parties who are not affiliated with this library.
 
 
-## 📖 Documentation
+## 📖 API Documentation
 ...
+
+### PluginManager.mostPopularSeries()
+
+```json
+[
+  {
+    "id": "series/the-outsider",
+    "title": "The Outsider",
+    "poster": "https://seriesflix.co/wp-content/uploads/2020/02/el-forastero-713-poster-160x240.jpg?x64271",
+    "type": "Serie",
+    "extra": [
+      {
+        "background_img": "https://image.tmdb.org/t/p/original/lmlsqpAfDZnZumcFhbsTrOy9uNZ.jpg",
+        "seasons": 1,
+        "desc": "Serie de HBO, que nos relata la historia del detective Ralph Anderson y Holly Gibney, quien es una investigadora poco ortodoxa; que investigan el brutal asesinato de Frankie Peterson, un joven muchacho de 11 años, ocurrido en un pacífico pueblo. Aunque al principio todo parece tener una explicación dentro de lo plausible, pronto se darán cuenta de que una fuerza sobrenatural parece tener mucho que ver en la desaparición del chico. Recuerda que ver serie The Outsider (2020) online es totalmente gratis en Seriesflix.Director: Richard PriceGénero: Crimen, Drama, MisterioActores: Ben Mendelsohn, Bill Camp, Cynthia Erivo, Jason Bateman, Jeremy Bobb, Julianne Nicholson, Marc Menchaca, Mare Winningham, Paddy Considine, Yul Vazquez",
+        "year": 2020,
+        "active": "EMISION",
+        "time": "60 min",
+        "directors": [
+          {
+            "name": "Richard Price"
+          }
+        ],
+        "genres": [
+          {
+            "genre": "crimen"
+          },
+          {
+            "genre": "drama"
+          },
+          {
+            "genre": "misterio"
+          }
+        ],
+        "cast": [
+          {
+            "name": "Ben Mendelsohn"
+          },
+          {
+            "name": "Bill Camp"
+          },
+          {
+            "name": "Cynthia Erivo"
+          },
+          {
+            "name": "Jason Bateman"
+          },
+          {
+            "name": "Jeremy Bobb"
+          },
+          {
+            "name": "Julianne Nicholson"
+          },
+          {
+            "name": "Marc Menchaca"
+          },
+          {
+            "name": "Mare Winningham"
+          },
+          {
+            "name": "Paddy Considine"
+          },
+          {
+            "name": "Yul Vazquez"
+          }
+        ],
+        "episodes": [
+          {
+            "season": 1,
+            "episodes": [
+              {
+                "episode": "Episodio 1",
+                "episode_id": "episodio/the-outsider-1x1",
+                "preview_img": "https://image.tmdb.org/t/p/w92/nZt5lGDCvlfuYkzWTqRrUOQLm8E.jpg",
+                "date": "12-01-2020"
+              },
+              {
+                "episode": "Episodio 2",
+                "episode_id": "episodio/the-outsider-1x2",
+                "preview_img": "https://image.tmdb.org/t/p/w92/sik148iMHzpV3ASvIqylSIQ9oK7.jpg",
+                "date": "12-01-2020"
+              },
+              {
+                "episode": "Episodio 3",
+                "episode_id": "episodio/the-outsider-1x3",
+                "preview_img": "https://image.tmdb.org/t/p/w92/b6IMGRpfH5PzaTX5zKpNIXOBRXW.jpg",
+                "date": "19-01-2020"
+              },
+              {
+                "episode": "Episodio 4",
+                "episode_id": "episodio/the-outsider-1x4",
+                "preview_img": "https://image.tmdb.org/t/p/w92/wGwMJfsjfvjfbTnT0pAbOFvV6Uf.jpg",
+                "date": "26-01-2020"
+              },
+              {
+                "episode": "Episodio 5",
+                "episode_id": "episodio/the-outsider-1x5",
+                "preview_img": "https://image.tmdb.org/t/p/w92/h5nR7JO4Cq4SPnhevmUFQ6QmQxY.jpg",
+                "date": "02-02-2020"
+              },
+              {
+                "episode": "Episodio 6",
+                "episode_id": "episodio/the-outsider-1x6",
+                "preview_img": "https:https://seriesflix.co/wp-content/uploads/2020/02/el-forastero-713-backdrop.jpg?x64271",
+                "date": "09-02-2020"
+              },
+              {
+                "episode": "Episodio 7",
+                "episode_id": "episodio/the-outsider-1x7",
+                "preview_img": "https:https://seriesflix.co/wp-content/uploads/2020/02/el-forastero-713-backdrop.jpg?x64271",
+                "date": "16-02-2020"
+              },
+              {
+                "episode": "Episodio 8",
+                "episode_id": "episodio/the-outsider-1x8",
+                "preview_img": "https:https://seriesflix.co/wp-content/uploads/2020/02/el-forastero-713-backdrop.jpg?x64271",
+                "date": "23-02-2020"
+              },
+              {
+                "episode": "Episodio 9",
+                "episode_id": "episodio/the-outsider-1x9",
+                "preview_img": "https:https://seriesflix.co/wp-content/uploads/2020/02/el-forastero-713-backdrop.jpg?x64271",
+                "date": "01-03-2020"
+              },
+              {
+                "episode": "Episodio 10",
+                "episode_id": "episodio/the-outsider-1x10",
+                "preview_img": "https:https://seriesflix.co/wp-content/uploads/2020/02/el-forastero-713-backdrop.jpg?x64271",
+                "date": "08-03-2020"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
+### PluginManager.getVideo([episode_id])
+To get the url of the videos for each episode you must check the **episodes** property and choose the **episode_id** property value. You will see that each episode has the **episode_id** property.
+
+You will use this **episode_id** property as a parameter of the **getVideo** function.
+
+```javascript
+(async() =>{
+  const episode_id = 'episodio/the-outsider-1x1';
+  const video = await getVideo(episode_id);
+  console.log(video);
+})();
+```
+
+```json
+[
+  {
+    "iframe": "https://www.fembed.com/v/q6nepfew-rqnly7"
+  }
+]
+```
 
 
 ## <img src="https://img.icons8.com/color/48/000000/paypal.png"> **Donations**
