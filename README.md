@@ -161,6 +161,70 @@ This API does not store any files on our server. All content is provided by thir
 ]
 ```
 
+### PluginManager.seriesByProducers([producer])
+
+| Producer | 
+|----------|
+|series-de-netflix|
+|series-de-amazon|
+|series-de-disney-plus|, 
+|series-de-fox| 
+|series-de-hbo| 
+|series-de-movistar-plus|
+|series-de-the-cw|
+|series-de-usa-network|
+
+
+```javascript
+(async() =>{
+  const producer = 'series-de-netflix'
+  const data = await seriesByProducers(producer);
+  console.log(data)
+})();
+```
+
+```json
+[
+  {
+    "id": "series/the-last-kingdom",
+    "title": "The Last Kingdom",
+    "poster": "https://seriesflix.co/wp-content/uploads/2020/04/the-last-kingdom-6750-poster-160x240.jpg?x64271",
+    "type": 2015,
+    "extra": [ [Object] ]
+  },
+  {
+    "id": "series/the-umbrella-academy",
+    "title": "The Umbrella Academy",
+    "poster": "https://seriesflix.co/wp-content/uploads/2020/04/the-umbrella-academy-6649-poster-160x240.jpg?x64271",
+    "type": 2019,
+    "extra": [ [Object] ]
+  },
+  {
+    "id": "series/jugando-con-fuego",
+    "title": "Jugando con fuego",
+    "poster": "https://seriesflix.co/wp-content/uploads/2020/04/jugando-con-fuego-6633-poster-160x240.jpg?x64271",
+    "type": 2020,
+    "extra": [ [Object] ]
+  },
+  {
+    "id": "series/la-casa-de-las-flores",
+    "title": "La casa de las flores",
+    "poster": "https://seriesflix.co/wp-content/uploads/2020/04/la-casa-de-las-flores-6578-poster-160x240.jpg?x64271",
+    "type": 2018,
+    "extra": [ [Object] ]
+  },
+  {
+    "id": "series/the-end-of-the-fucking-world",
+    "title": "The End of the Fucking World",
+    "poster": "https://seriesflix.co/wp-content/uploads/2020/04/the-end-of-the-fing-world-6432-poster-160x240.jpg?x64271",
+    "type": 2017,
+    "extra": [ [Object] ]
+  },
+  // .....
+]
+```
+
+
 ### PluginManager.getVideo([episode_id])
 To get the url of the videos for each episode you must check the **episodes** property and choose the **episode_id** property value. You will see that each episode has the **episode_id** property.
 
