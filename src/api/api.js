@@ -1,6 +1,6 @@
 const cheerio = require('cheerio');
 const {client} = require('../client/client');
-const {toInt} = require('./utils/index');
+const {toInt , getIframeURL} = require('./utils/index');
 const {BASE_URL} = require('./url/index');
 
 const mostPopularSeries = async() =>{
@@ -109,12 +109,12 @@ const seasonHanlder = async(id) =>{
   const res = await client.get(`${BASE_URL}/${id}`);
   const $ = cheerio.load(res);
 
-  const promise = $('table tbody tr.Viewed').map((index , element) => new Promise((resolve, reject) =>{
+  const promise = $('table tbody tr.Viewed').map((index , element) => new Promise(async(resolve, reject) =>{
     const $element = $(element);
     const episode = $element.find('td.MvTbTtl a').text().trim();
     const preview_img = 'https:'.concat($element.find('td.MvTbImg a.MvTbImg img.imglazy').attr('data-src')).trim();
     const episode_id = 'episodio/'.concat($element.find('td.MvTbTtl a').attr('href').split('/')[4]).trim();
-    const date = $element.find('td.MvTbTtl span').text().trim();
+    const date = $element.find('td.MvTbTtl span').text().trim();    
     resolve({
       episode: episode || null,
       episode_id: episode_id || null,
@@ -126,4 +126,27 @@ const seasonHanlder = async(id) =>{
   const data = promise.get();
 
   return Promise.all(data);
+};
+
+const getVideo = async(id) =>{
+  const res1 = await client.get(`${BASE_URL}/${id}`);
+  const $ = cheerio.load(res1);
+
+  const _iframeURL1 = await getIframeURL($);
+  const url2 = _iframeURL1.replace(/amp;/g, "").slice(0 , -1); // ignore the (") at the end of the first iframe url
+
+  const res2 = await client.get(url2);
+  const $$ = cheerio.load(res2);
+  const _iframeURL2 = await getIframeURL($$);
+  const iframeURL2 = _iframeURL2.slice(0 , -1); // ignore the (") at the end of the first iframe url
+
+  const iframe = [{iframe: iframeURL2}]
+
+  return Promise.all(iframe);
+};
+
+
+module.exports = {
+  mostPopularSeries,
+  getVideo
 };
