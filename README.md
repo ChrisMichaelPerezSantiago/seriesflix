@@ -163,16 +163,41 @@ This API does not store any files on our server. All content is provided by thir
 
 ### PluginManager.seriesByProducers([producer])
 
-| Producer | 
-|----------|
-|series-de-netflix|
-|series-de-amazon|
-|series-de-disney-plus|, 
-|series-de-fox| 
-|series-de-hbo| 
-|series-de-movistar-plus|
-|series-de-the-cw|
-|series-de-usa-network|
+| Producer                   | 
+|----------------------------|
+| series-de-abc              |
+| series-de-amazon           |
+| series-de-amc              |
+| series-de-atresplayer      |
+| series-de-bbc-one          |
+| series-de-bbc-two          |
+| series-de-cartoon-network  |
+| series-de-cbs-all-access   |
+| series-de-channel-4        |
+| series-de-disney-plus      |
+| series-de-espn-plus        |
+| series-de-fox              |
+| series-de-hbo              |
+| series-de-history          |
+| series-de-la-sexta         |
+| series-de-lifetime         |
+| series-de-movistar-plus    |
+| series-de-nbc              |
+| series-de-netflix          |
+| series-de-orf              |
+| series-de-ruv              |
+| series-de-starz            |
+| series-de-svt1             |
+| series-de-syfy             |
+| series-de-telecinco        |
+| series-de-the-cw           |
+| series-de-the-wb           |
+| series-de-tv3              |
+| series-de-univision        |
+| series-de-usa-network      |
+
+
+
 
 
 ```javascript
@@ -218,6 +243,71 @@ This API does not store any files on our server. All content is provided by thir
     "title": "The End of the Fucking World",
     "poster": "https://seriesflix.co/wp-content/uploads/2020/04/the-end-of-the-fing-world-6432-poster-160x240.jpg?x64271",
     "type": 2017,
+    "extra": [ [Object] ]
+  },
+  // .....
+]
+```
+
+### PluginManager.seriesByGenre([genre])
+
+| Genres           | 
+|------------------|
+| accion           |
+| animacion        |
+| aventura         |
+| ciencia-ficcion  |
+| comedia          |
+| crimen           |
+| documental       |
+| drama            |
+| familia          |
+| fantasia         |
+| misterio         |
+| musica           |
+| politica         |
+| reality          |
+| romance          |
+| terror           |
+| western          |
+
+
+```javascript
+(async() =>{
+  const genre = 'ciencia-ficcion';
+  const data = await seriesByGenre(genre);
+  console.log(data);
+})();
+```
+
+```json
+[
+  {
+    "id": "series/siempre-bruja",
+    "title": "Siempre Bruja",
+    "poster": "https://seriesflix.co/wp-content/uploads/2020/04/siempre-bruja-6946-poster-160x240.jpg?x64271",
+    "type": 2019,
+    "extra": [ [Object] ]
+  },
+  {
+    "id": "series/teen-wolf",
+    "title": "Teen Wolf",
+    "poster": "https://seriesflix.co/wp-content/uploads/2020/04/lobo-adolescente-6778-poster-160x240.jpg?x64271",
+    "type": 2011,
+    "extra": [ [Object] ]
+  },
+  {
+    "id": "series/the-umbrella-academy",
+    "title": "The Umbrella Academy",
+    "poster": "https://seriesflix.co/wp-content/uploads/2020/04/the-umbrella-academy-6649-poster-160x240.jpg?x64271",
+    "type": 2019,
+    "extra": [ [Object] ]
+  },
+  {
+    "id": "series/supergirl",
+    "title": "Supergirl",
+    "poster": "https://seriesflix.co/wp-content/uploads/2020/04/supergirl-6462-poster-160x240.jpg?x64271",
+    "type": 2015,
     "extra": [ [Object] ]
   },
   // .....
