@@ -337,16 +337,6 @@ You will use this **episode_id** property as a parameter of the **getVideo** fun
 ```
 
 
-## <img src="https://img.icons8.com/color/48/000000/paypal.png"> **Donations**
-Seriesflix API is an open source project licensed by MIT with continuous development. If you want me to continue maintaining this library and you are interested in continuing to use it, you can help me with a monetary help in the following link:
-
-
-- [One-time donation via PayPal.](https://paypal.me/chrismperezsantiago?locale.x=en_US)
-
-<a href="https://www.buymeacoffee.com/chrismichael" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
-
-These are projects that take a lot of effort and time to maintain. So with your help I will be more motivated to continue maintaining the Seriesflix API project.
-
 ## **:handshake: Contributing**
 
 - Fork it!
